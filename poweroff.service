@@ -1,0 +1,11 @@
+[Unit]
+Description=Wait for files (written by remote processes) to not exist anymore, then shut down
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/poweroff.sh
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
