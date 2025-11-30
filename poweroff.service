@@ -1,5 +1,5 @@
 [Unit]
-Description=Wait for files (written by remote processes) to not exist anymore, then shut down
+Description=Poweroff deamon
 After=network.target
 
 [Service]

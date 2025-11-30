@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-RUN_PATH=/var/run/poweroff
+RUN_PATH=/tmp/poweroff
 TIMEOUT_START=180
 TIMEOUT_CHECK=30
 
-if [ ! -d "$RUN_PATH" ]; then
-    echo "Error: Directory '$RUN_PATH' does not exist."
-    exit 1
-fi
+mkdir $RUN_PATH
 
-rm -rf "${RUN_PATH:?}/"* 2> /dev/null
+# optionally, change ownership
+# chown <user>:<user> $RUN_PATH
+
+rm -rf "${RUN_PATH:?}/"* 2>/dev/null
 
 sleep "$TIMEOUT_START"
 
